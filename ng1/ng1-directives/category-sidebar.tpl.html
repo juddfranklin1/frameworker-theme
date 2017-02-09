@@ -1,0 +1,8 @@
+<div class="col-sm-3 col-sm-push-9">
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#/">All</a></li>
+    <li ng-repeat="category in categoriesObject">
+      <a href="#/category/{{category.id}}">{{category.name}}</a>
+    </li>
+  </ul>
+</div>

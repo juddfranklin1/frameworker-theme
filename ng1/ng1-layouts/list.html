@@ -1,13 +1,6 @@
 <!--Template for list of posts -->
 <div class="row">
-  <div class="col-sm-3 col-sm-push-9">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">All</a></li>
-      <li ng-repeat="category in categories">
-        <a href="#/category/{{category.id}}">{{category.name}}</a>
-      </li>
-    </ul>
-  </div>
+  <category-sidebar-directive categories-object="categories"></category-sidebar-directive>
   <div class="col-sm-9 col-sm-pull-3">
     <div ng-http-loader title="example" methods="GET" template="../ng1-directives/loader.html"></div>
     <section ng-repeat="post in blogPosts" class="listed-post">
