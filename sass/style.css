@@ -1,0 +1,215 @@
+/* Theme Name: Judd's Theme */
+/* Theme URI: http://juddfranklin.com/wordpress_theme */
+/* Author: Judd Franklin */
+/* Author URI: http://juddfranklin.com/ */
+/* Description: This theme represents an example of some of the things we can do with wordpress. */
+/* Version: 0.1 */
+/* License: GNU General Public License v2 or later */
+/* License URI: http://www.gnu.org/licenses/gpl-2.0.html */
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+/* Coolors Exported Palette - coolors.co/bb4430-7ebdc2-f3dfa2-efe6dd-4e0110 */
+/* HSL */
+/* RGB */
+html {
+  font-size: 14px; }
+
+body {
+  font-family: "Lora", serif; }
+
+h1, h2, h3, h4, h5, h6, .site-title, .site-description {
+  font-family: "Istok Web", sans-serif; }
+
+p, ul, li, ol {
+  font-family: "Lora", serif; }
+
+header, footer {
+  font-family: "Istok Web", sans-serif; }
+
+a {
+  color: #7ebdc2; }
+
+.nav.navbar-nav.navbar-right {
+  background: #f3dfa2; }
+
+header#masthead, footer {
+  background: #4e0110;
+  color: #efe6dd;
+  margin: 0 0 0;
+  padding: 1em 2em; }
+  header#masthead .wrap, footer .wrap {
+    width: 100%; }
+
+header#masthead {
+  padding-bottom: 0; }
+
+main {
+  padding: 2rem 0; }
+  main article, main section {
+    padding: 2rem 0;
+    margin: 2rem 0;
+    position: relative; }
+  main section:before {
+    content: "&#%!@?!";
+    color: #210c08;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: -2.5rem;
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    font-size: 2rem; }
+  main article.home-article {
+    padding: 0 0 2rem;
+    margin: 0 0 2rem; }
+
+.juddtheme-callout {
+  padding: 3.5em 1.5em 1.5em;
+  background: #ddd;
+  position: relative;
+  max-width: 800px;
+  -webkit-animation: reverse_color_change 1s;
+  -moz-animation: reverse_color_change 1s;
+  -ms-animation: reverse_color_change 1s;
+  -o-animation: reverse_color_change 1s;
+  animation: reverse_color_change 1s; }
+  .juddtheme-callout:hover {
+    -webkit-animation: color_change 1s;
+    -moz-animation: color_change 1s;
+    -ms-animation: color_change 1s;
+    -o-animation: color_change 1s;
+    animation: color_change 1s;
+    background: #aaa;
+    border-left-color: #bbb; }
+@-webkit-keyframes color_change {
+  0% {
+    background-color: #ddd;
+    border-left-color: #eee; }
+  100% {
+    background-color: #aaa;
+    border-left-color: #bbb; } }
+@-moz-keyframes color_change {
+  0% {
+    background-color: #ddd;
+    border-left-color: #eee; }
+  100% {
+    background-color: #aaa;
+    border-left-color: #bbb; } }
+@-ms-keyframes color_change {
+  0% {
+    background-color: #ddd;
+    border-left-color: #eee; }
+  100% {
+    background-color: #aaa;
+    border-left-color: #bbb; } }
+@-o-keyframes color_change {
+  0% {
+    background-color: #ddd;
+    border-left-color: #eee; }
+  100% {
+    background-color: #aaa;
+    border-left-color: #bbb; } }
+@keyframes color_change {
+  0% {
+    background-color: #ddd;
+    border-left-color: #eee; }
+  100% {
+    background-color: #aaa;
+    border-left-color: #bbb; } }
+@-webkit-keyframes reverse_color_change {
+  0% {
+    background-color: #aaa;
+    border-left-color: #bbb; }
+  100% {
+    background-color: #ddd;
+    border-left-color: #eee; } }
+@-moz-keyframes reverse_color_change {
+  0% {
+    background-color: #aaa;
+    border-left-color: #bbb; }
+  100% {
+    background-color: #ddd;
+    border-left-color: #eee; } }
+@-ms-keyframes reverse_color_change {
+  0% {
+    background-color: #aaa;
+    border-left-color: #bbb; }
+  100% {
+    background-color: #ddd;
+    border-left-color: #eee; } }
+@-o-keyframes reverse_color_change {
+  0% {
+    background-color: #aaa;
+    border-left-color: #bbb; }
+  100% {
+    background-color: #ddd;
+    border-left-color: #eee; } }
+@keyframes reverse_color_change {
+  0% {
+    background-color: #aaa;
+    border-left-color: #bbb; }
+  100% {
+    background-color: #ddd;
+    border-left-color: #eee; } }
+  .juddtheme-callout.technical-aside:before {
+    content: "Technical Aside"; }
+  .juddtheme-callout.social-aside:before {
+    content: "Social Aside"; }
+  .juddtheme-callout.personal-aside:before {
+    content: "Personal Aside"; }
+  .juddtheme-callout:before {
+    content: "";
+    position: absolute;
+    color: #222;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    top: 0.5em;
+    left: 2.25em;
+    font-family: "Permanent Marker", cursive; }
+
+.site-title {
+  font-family: "Istok Web", sans-serif;
+  font-size: 2rem;
+  line-height: 1rem;
+  margin-top: 1rem; }
+  .site-title a {
+    color: #efe6dd; }
+
+.site-description {
+  font-size: 1rem;
+  margin-bottom: 1rem; }
+
+.main-navigation {
+  padding: 0; }
+  .main-navigation .nav-item {
+    border: 1px solid #7ebdc2;
+    margin: 2px 2px 2px 0; }
+    .main-navigation .nav-item a {
+      color: #efe6dd; }
+    .main-navigation .nav-item:hover {
+      background: #210c08; }
+      .main-navigation .nav-item:hover a {
+        color: #7ebdc2; }
+
+blockquote {
+  background: #efe6dd;
+  color: #210c08;
+  display: block; }
+  blockquote p {
+    padding: 1rem; }
+  blockquote footer {
+    background: #f3dfa2;
+    color: #4e0110; }
+
+.listed-post {
+  position: relative; }
+  .listed-post .date-block-wrapper {
+    width: 60px;
+    height: 60px; }
+    .listed-post .date-block-wrapper .date-block {
+      background: #efe6dd;
+      color: #210c08;
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+/*# sourceMappingURL=style.css.map */

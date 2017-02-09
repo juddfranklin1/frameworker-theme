@@ -1,0 +1,26 @@
+<!--Template for list of posts -->
+<div class="row">
+  <div class="col-sm-3 col-sm-push-9">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">All</a></li>
+      <li ng-repeat="category in categories">
+        <a href="#/category/{{category.id}}">{{category.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-pull-3">
+    <div ng-http-loader title="example" methods="GET" template="../ng1-directives/loader.html"></div>
+    <section ng-repeat="post in blogPosts" class="listed-post">
+      <post-directive post-object="post"></post-directive>
+    </section>
+    <section class="scramblr">
+      <h3>Scramble while you wait?</h3>
+      <select ng-model="scrambleType" ng-options="o as o for o in scrambleOptions"></select>
+      <input type="text" ng-model="toScrambleString" /><button ng-click="scrambleIt()">Scramble!</button>
+      <hr />
+      <p>You are attempting to scramble __{{toScrambleString}}__ with the method: {{scrambleType}}</p>
+      <p>The result is: <span ng-bind-html=scrambledString></span></p>
+      <hr />
+    </section>
+  </div>
+</div>

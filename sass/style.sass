@@ -1,0 +1,153 @@
+/* Theme Name: Judd's Theme */
+/* Theme URI: http://juddfranklin.com/wordpress_theme */
+/* Author: Judd Franklin */
+/* Author URI: http://juddfranklin.com/ */
+/* Description: This theme represents an example of some of the things we can do with wordpress. */
+/* Version: 0.1 */
+/* License: GNU General Public License v2 or later */
+/* License URI: http://www.gnu.org/licenses/gpl-2.0.html */
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
+@import 'animation-transition-mixins.sass'
+@import 'cooler-scheme.sass'
+@import 'fonts.sass'
+
+a
+  color: $color2
+
+.nav.navbar-nav.navbar-right
+  background: $color3
+  padding: 1rem 0
+  li a
+    display: block
+    color: $color1
+    padding: .5rem 1rem
+
+header#masthead,footer
+  background: $color5
+  color: $color4
+  margin: 0 0 0
+  padding: 1em 2em
+  .wrap
+    width: 100%
+header#masthead
+  padding-bottom: 0
+main
+  padding: 2rem 0
+  article, section
+    position: relative
+  section
+    padding: 2rem 0
+    margin: 4rem 0
+  section:before
+    content: '&#%!@?!'
+    color: $color4
+    position: absolute
+    width: 100%
+    margin: auto
+    top: -3.5rem
+    text-align: center
+    font-family: 'Permanent Marker', cursive
+    font-size: 2rem
+    background: $color5
+  article.home-article
+    padding: 0 0 2rem
+    margin: 0 0 2rem
+
+// Custom formats
+.juddtheme-callout
+  padding: 3.5em 1.5em 1.5em
+  background: #ddd
+  position: relative
+  max-width: 800px
+
+  @include animation('reverse_color_change 1s')
+  // @include transition(color 1s ease)
+
+  &:hover
+    @include animation('color_change 1s')
+    background: #aaa
+    border-left-color: #bbb
+
+  @include keyframes(color_change)
+    0%
+      background-color: #ddd
+      border-left-color: #eee
+    100%
+      background-color: #aaa
+      border-left-color: #bbb
+
+  @include keyframes(reverse_color_change)
+    0%
+      background-color: #aaa
+      border-left-color: #bbb
+    100%
+      background-color: #ddd
+      border-left-color: #eee
+
+  &.technical-aside:before
+    content: 'Technical Aside'
+
+  &.social-aside:before
+    content: 'Social Aside'
+
+  &.personal-aside:before
+    content: 'Personal Aside'
+
+  &:before
+    content: ''
+    position: absolute
+    color: #222
+    font-size: 1.5em
+    text-transform: uppercase
+    top: .5em
+    left: 2.25em
+    font-family: 'Permanent Marker', cursive
+
+.site-title
+  font-family: 'Istok Web', sans-serif
+  font-size: 2rem
+  line-height: 1rem
+  margin-top: 1rem
+  a
+    color: $color4
+.site-description
+  font-size: 1rem
+  margin-bottom: 1rem
+.main-navigation
+  padding: 0
+  .nav-item
+    border: 1px solid $color2
+    margin: 2px 2px 2px 0
+    a
+      color: $color4
+    &:hover
+      background: $color1
+      a
+        color: $color2
+blockquote
+  background: $color4
+  color: $color1
+  display: block
+  p
+    padding: 1rem
+  footer
+    background: $color3
+    color: $color5
+
+.listed-post
+  margin-top: 4rem
+  padding: 0 0
+  blockquote
+    margin: 2rem 15px
+  article
+    padding: 2rem 15px
+  .excerpt-post
+    padding: 2rem 15px
+  .excerpt-post-date-wrapper
+    .excerpt-post-date
+      background: $color2
+      color: $color5
+      padding: 1rem
+      width: 100%
+      h6
+        margin-bottom: 0

@@ -1,0 +1,6 @@
+[Tt]humbs.db
+*.DS_Store
+
+angular-loading-bar/
+sass/.sass-cache/
+.sass-cache/

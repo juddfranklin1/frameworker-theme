@@ -1,0 +1,18 @@
+<!-- Layout for individual post -->
+<div class="row">
+  <div class="col-sm-3 col-sm-push-9">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">All</a></li>
+      <li ng-repeat="category in categories">
+        <a ng-class="{active: category.id == blogPost.category}" href="#/category/{{category.id}}">{{category.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-pull-3">
+    <div class="badge rounded-circle date-block">
+      <h5>{{blogPost.dateFormatted}}</h5>
+    </div>
+    <h3>{{blogPost.title.rendered}}</h3>
+    <div ng-bind-html="blogPost.content.rendered"></div>
+  </div>
+</div>
