@@ -1,35 +1,17 @@
 <?php
 /**
- * Template Name: AngularJS 1.x Template
- * The template for displaying the AngularJS 1.x single-page application
+ * Template Name: AngularJS 2.x Template
+ * The template for displaying the AngularJS 2 single-page application
  *
  */
- if(get_current_template() == 'page_template-ng1.php'){// Stuff for Angular 1.x page
-   require_once get_template_directory() . '/code/framework_ng1_class.php';
+ if(get_current_template() == 'page_template-ng2.php'){// Stuff for Angular 1.x page
+   require_once get_template_directory() . '/code/framework_ng2_class.php';
  	 $frameworkInit = new Ng1_Framework_Builder (
      'ng_1',
      array(
-      array(
-      	"handle"	=> 'ng1-scramblr-service',
-      	"src"			=> get_template_directory_uri() . '/js/services/scramblr-service.js',
-        "deps"		=> array(),
-      	"ver"			=> '0.1',
-      	"in_foot"	=> true),
-      array(
-        "handle"	=> 'ng1-wordpress-service',
-        "src"			=> get_template_directory_uri() . '/js/services/wordpress-service.js',
-        "deps"		=> array(),
-        "ver"			=> '0.1',
-        "in_foot"	=> true),
     	array(
-      	"handle"	=> 'ng1-routes',
-      	"src"			=> get_template_directory_uri() . '/js/ng1-routes.js',
-      	"deps"		=> array(),
-      	"ver"			=> '0.1',
-      	"in_foot"	=> true),
-    	array(
-      	"handle"	=> 'ng1-implementation',
-      	"src"			=> get_template_directory_uri() . '/js/ng1-app.js',
+      	"handle"	=> '',
+      	"src"			=> '',
       	"deps"		=> array(),
       	"ver"			=> '0.1',
       	"in_foot"	=> true),

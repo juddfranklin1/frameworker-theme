@@ -1,5 +1,5 @@
-/* Theme Name: Judd's Theme */
-/* Theme URI: http://juddfranklin.com/wordpress_theme */
+/* Theme Name: Frameworker Theme */
+/* Theme URI: https://github.com/juddfranklin1/frameworker-theme */
 /* Author: Judd Franklin */
 /* Author URI: http://juddfranklin.com/ */
 /* Description: This theme represents an example of some of the things we can do with wordpress. */
@@ -10,66 +10,99 @@
 /* Coolors Exported Palette - coolors.co/bb4430-7ebdc2-f3dfa2-efe6dd-4e0110 */
 /* HSL */
 /* RGB */
+/* line 1, sass/_fonts.sass */
 html {
-  font-size: 14px; }
+  font-size: 14px;
+}
 
+/* line 4, sass/_fonts.sass */
 body {
-  font-family: "Lora", serif; }
+  font-family: "Lora", serif;
+}
 
+/* line 6, sass/_fonts.sass */
 h1, h2, h3, h4, h5, h6, .site-title, .site-description {
-  font-family: "Istok Web", sans-serif; }
+  font-family: "Istok Web", sans-serif;
+}
 
+/* line 8, sass/_fonts.sass */
 p, ul, li, ol {
-  font-family: "Lora", serif; }
+  font-family: "Lora", serif;
+}
 
+/* line 10, sass/_fonts.sass */
 header, footer {
-  font-family: "Istok Web", sans-serif; }
+  font-family: "Istok Web", sans-serif;
+}
 
+/* line 14, sass/style.sass */
 a {
-  color: #7ebdc2; }
+  color: #7ebdc2;
+}
 
+/* line 17, sass/style.sass */
 .nav.navbar-nav.navbar-right {
   background: #f3dfa2;
-  padding: 1rem 0; }
-  .nav.navbar-nav.navbar-right li a {
-    display: block;
-    color: #210c08;
-    padding: 0.5rem 1rem; }
+  padding: 1rem 0;
+}
+/* line 20, sass/style.sass */
+.nav.navbar-nav.navbar-right li a {
+  display: block;
+  color: #210c08;
+  padding: 0.5rem 1rem;
+}
 
+/* line 25, sass/style.sass */
 header#masthead, footer {
   background: #4e0110;
   color: #efe6dd;
   margin: 0 0 0;
-  padding: 1em 2em; }
-  header#masthead .wrap, footer .wrap {
-    width: 100%; }
+  padding: 1em 2em;
+}
+/* line 30, sass/style.sass */
+header#masthead .wrap, footer .wrap {
+  width: 100%;
+}
 
+/* line 32, sass/style.sass */
 header#masthead {
-  padding-bottom: 0; }
+  padding-bottom: 0;
+}
 
+/* line 34, sass/style.sass */
 main {
-  padding: 2rem 0; }
-  main article, main section {
-    position: relative; }
-  main section {
-    padding: 2rem 0;
-    margin: 4rem 0; }
-  main section:before {
-    content: "&#%!@?!";
-    color: #efe6dd;
-    position: absolute;
-    width: 100%;
-    margin: auto;
-    top: -3.5rem;
-    text-align: center;
-    font-family: "Permanent Marker", cursive;
-    font-size: 2rem;
-    background: #4e0110; }
-  main article.home-article {
-    padding: 0 0 2rem;
-    margin: 0 0 2rem; }
+  padding: 2rem 0;
+}
+/* line 36, sass/style.sass */
+main article, main section {
+  position: relative;
+}
+/* line 38, sass/style.sass */
+main section {
+  padding: 2rem 0;
+  margin: 4rem 0;
+}
+/* line 41, sass/style.sass */
+main section:before {
+  content: "&#%!@?!";
+  color: #efe6dd;
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  top: -3.5rem;
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+  font-size: 2rem;
+  background: #4e0110;
+}
+/* line 52, sass/style.sass */
+main article.home-article {
+  padding: 0 0 2rem;
+  margin: 0 0 2rem;
+}
 
-.juddtheme-callout {
+/* line 57, sass/style.sass */
+.frameworker-theme-callout {
   padding: 3.5em 1.5em 1.5em;
   background: #ddd;
   position: relative;
@@ -78,150 +111,223 @@ main {
   -moz-animation: reverse_color_change 1s;
   -ms-animation: reverse_color_change 1s;
   -o-animation: reverse_color_change 1s;
-  animation: reverse_color_change 1s; }
-  .juddtheme-callout:hover {
-    -webkit-animation: color_change 1s;
-    -moz-animation: color_change 1s;
-    -ms-animation: color_change 1s;
-    -o-animation: color_change 1s;
-    animation: color_change 1s;
-    background: #aaa;
-    border-left-color: #bbb; }
+  animation: reverse_color_change 1s;
+}
+/* line 66, sass/style.sass */
+.frameworker-theme-callout:hover {
+  -webkit-animation: color_change 1s;
+  -moz-animation: color_change 1s;
+  -ms-animation: color_change 1s;
+  -o-animation: color_change 1s;
+  animation: color_change 1s;
+  background: #aaa;
+  border-left-color: #bbb;
+}
 @-webkit-keyframes color_change {
   0% {
     background-color: #ddd;
-    border-left-color: #eee; }
+    border-left-color: #eee;
+  }
   100% {
     background-color: #aaa;
-    border-left-color: #bbb; } }
+    border-left-color: #bbb;
+  }
+}
 @-moz-keyframes color_change {
   0% {
     background-color: #ddd;
-    border-left-color: #eee; }
+    border-left-color: #eee;
+  }
   100% {
     background-color: #aaa;
-    border-left-color: #bbb; } }
+    border-left-color: #bbb;
+  }
+}
 @-ms-keyframes color_change {
   0% {
     background-color: #ddd;
-    border-left-color: #eee; }
+    border-left-color: #eee;
+  }
   100% {
     background-color: #aaa;
-    border-left-color: #bbb; } }
+    border-left-color: #bbb;
+  }
+}
 @-o-keyframes color_change {
   0% {
     background-color: #ddd;
-    border-left-color: #eee; }
+    border-left-color: #eee;
+  }
   100% {
     background-color: #aaa;
-    border-left-color: #bbb; } }
+    border-left-color: #bbb;
+  }
+}
 @keyframes color_change {
   0% {
     background-color: #ddd;
-    border-left-color: #eee; }
+    border-left-color: #eee;
+  }
   100% {
     background-color: #aaa;
-    border-left-color: #bbb; } }
+    border-left-color: #bbb;
+  }
+}
 @-webkit-keyframes reverse_color_change {
   0% {
     background-color: #aaa;
-    border-left-color: #bbb; }
+    border-left-color: #bbb;
+  }
   100% {
     background-color: #ddd;
-    border-left-color: #eee; } }
+    border-left-color: #eee;
+  }
+}
 @-moz-keyframes reverse_color_change {
   0% {
     background-color: #aaa;
-    border-left-color: #bbb; }
+    border-left-color: #bbb;
+  }
   100% {
     background-color: #ddd;
-    border-left-color: #eee; } }
+    border-left-color: #eee;
+  }
+}
 @-ms-keyframes reverse_color_change {
   0% {
     background-color: #aaa;
-    border-left-color: #bbb; }
+    border-left-color: #bbb;
+  }
   100% {
     background-color: #ddd;
-    border-left-color: #eee; } }
+    border-left-color: #eee;
+  }
+}
 @-o-keyframes reverse_color_change {
   0% {
     background-color: #aaa;
-    border-left-color: #bbb; }
+    border-left-color: #bbb;
+  }
   100% {
     background-color: #ddd;
-    border-left-color: #eee; } }
+    border-left-color: #eee;
+  }
+}
 @keyframes reverse_color_change {
   0% {
     background-color: #aaa;
-    border-left-color: #bbb; }
+    border-left-color: #bbb;
+  }
   100% {
     background-color: #ddd;
-    border-left-color: #eee; } }
-  .juddtheme-callout.technical-aside:before {
-    content: "Technical Aside"; }
-  .juddtheme-callout.social-aside:before {
-    content: "Social Aside"; }
-  .juddtheme-callout.personal-aside:before {
-    content: "Personal Aside"; }
-  .juddtheme-callout:before {
-    content: "";
-    position: absolute;
-    color: #222;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    top: 0.5em;
-    left: 2.25em;
-    font-family: "Permanent Marker", cursive; }
+    border-left-color: #eee;
+  }
+}
+/* line 87, sass/style.sass */
+.frameworker-theme-callout.technical-aside:before {
+  content: "Technical Aside";
+}
+/* line 90, sass/style.sass */
+.frameworker-theme-callout.social-aside:before {
+  content: "Social Aside";
+}
+/* line 93, sass/style.sass */
+.frameworker-theme-callout.personal-aside:before {
+  content: "Personal Aside";
+}
+/* line 96, sass/style.sass */
+.frameworker-theme-callout:before {
+  content: "";
+  position: absolute;
+  color: #222;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  top: 0.5em;
+  left: 2.25em;
+  font-family: "Permanent Marker", cursive;
+}
 
+/* line 106, sass/style.sass */
 .site-title {
   font-family: "Istok Web", sans-serif;
   font-size: 2rem;
   line-height: 1rem;
-  margin-top: 1rem; }
-  .site-title a {
-    color: #efe6dd; }
+  margin-top: 1rem;
+}
+/* line 111, sass/style.sass */
+.site-title a {
+  color: #efe6dd;
+}
 
+/* line 113, sass/style.sass */
 .site-description {
   font-size: 1rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
+/* line 116, sass/style.sass */
 .main-navigation {
-  padding: 0; }
-  .main-navigation .nav-item {
-    border: 1px solid #7ebdc2;
-    margin: 2px 2px 2px 0; }
-    .main-navigation .nav-item a {
-      color: #efe6dd; }
-    .main-navigation .nav-item:hover {
-      background: #210c08; }
-      .main-navigation .nav-item:hover a {
-        color: #7ebdc2; }
+  padding: 0;
+}
+/* line 118, sass/style.sass */
+.main-navigation .nav-item {
+  border: 1px solid #7ebdc2;
+  margin: 2px 2px 2px 0;
+}
+/* line 121, sass/style.sass */
+.main-navigation .nav-item a {
+  color: #efe6dd;
+}
+/* line 123, sass/style.sass */
+.main-navigation .nav-item:hover {
+  background: #210c08;
+}
+/* line 125, sass/style.sass */
+.main-navigation .nav-item:hover a {
+  color: #7ebdc2;
+}
 
+/* line 127, sass/style.sass */
 blockquote {
   background: #efe6dd;
   color: #210c08;
-  display: block; }
-  blockquote p {
-    padding: 1rem; }
-  blockquote footer {
-    background: #f3dfa2;
-    color: #4e0110; }
+  display: block;
+}
+/* line 131, sass/style.sass */
+blockquote p {
+  padding: 1rem;
+}
+/* line 133, sass/style.sass */
+blockquote footer {
+  background: #f3dfa2;
+  color: #4e0110;
+}
 
+/* line 137, sass/style.sass */
 .listed-post {
   margin-top: 4rem;
-  padding: 0 0; }
-  .listed-post blockquote {
-    margin: 2rem 15px; }
-  .listed-post article {
-    padding: 2rem 15px; }
-  .listed-post .excerpt-post {
-    padding: 2rem 15px; }
-  .listed-post .excerpt-post-date-wrapper .excerpt-post-date {
-    background: #7ebdc2;
-    color: #4e0110;
-    padding: 1rem;
-    width: 100%; }
-    .listed-post .excerpt-post-date-wrapper .excerpt-post-date h6 {
-      margin-bottom: 0; }
-
-/*# sourceMappingURL=style.css.map */
+  padding: 0 0;
+}
+/* line 140, sass/style.sass */
+.listed-post blockquote {
+  margin: 2rem 15px;
+}
+/* line 142, sass/style.sass */
+.listed-post article {
+  padding: 2rem 15px;
+}
+/* line 144, sass/style.sass */
+.listed-post .excerpt-post {
+  padding: 2rem 15px;
+}
+/* line 147, sass/style.sass */
+.listed-post .excerpt-post-date-wrapper .excerpt-post-date {
+  background: #7ebdc2;
+  color: #4e0110;
+  padding: 1rem;
+  width: 100%;
+}
+/* line 152, sass/style.sass */
+.listed-post .excerpt-post-date-wrapper .excerpt-post-date h6 {
+  margin-bottom: 0;
+}

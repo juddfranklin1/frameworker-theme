@@ -71,7 +71,7 @@ wordpressApp.controller('categoryController', ['$scope', '$log', '$filter', '$re
 wordpressApp.directive("postDirective",function(){
   return {
     restrict: 'AECM',
-    templateUrl: '/wp-content/themes/juddtheme/ng1/ng1-directives/excerpt-post.tpl.html',
+    templateUrl: '/wp-content/themes/frameworker-theme/ng1/ng1-directives/excerpt-post.tpl.html',
     replace: true,
     scope: {
       postObject: '='
@@ -82,7 +82,7 @@ wordpressApp.directive("postDirective",function(){
 wordpressApp.directive("categorySidebarDirective",function(){
   return {
     restrict: 'AECM',
-    templateUrl: '/wp-content/themes/juddtheme/ng1/ng1-directives/category-sidebar.tpl.html',
+    templateUrl: '/wp-content/themes/frameworker-theme/ng1/ng1-directives/category-sidebar.tpl.html',
     replace: true,
     scope: {
       categoriesObject: '='

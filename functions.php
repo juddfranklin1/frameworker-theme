@@ -1,13 +1,13 @@
 <?php
 /**
- * Judd's Theme functions and definitions
+ * Frameworker Theme functions and definitions
  *
- * @link http://juddfranklin.com/wordpress/theme.html
+ * @link https://github.com/juddfranklin1/frameworker-theme
  *
  */
 
 /**
- * Judd's Theme only works in WordPress 4.7 or later.
+ * Frameworker Theme only works in WordPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -15,7 +15,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 }
 require_once get_template_directory() . '/code/framework_class.php';
 
-function juddstheme_setup() {
+function frameworker_theme_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyseventeen
@@ -81,7 +81,7 @@ function juddstheme_setup() {
   ) );
 
 }
-add_action( 'after_setup_theme', 'juddstheme_setup' );
+add_action( 'after_setup_theme', 'frameworker_theme_setup' );
 
 function add_theme_styles_and_scripts () {
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Istok+Web|Lora|Permanent+Marker', false );
@@ -141,20 +141,20 @@ function additional_formats( $init_array ) {
 		array(
 			'title' => '.technical-aside',
 			'block' => 'blockquote',
-			'classes' => 'juddtheme-callout technical-aside jumbotron',
+			'classes' => 'frameworker-theme-callout technical-aside jumbotron',
 			'wrapper' => true,
 
 		),
 		array(
 			'title' => '.personal-aside',
 			'block' => 'blockquote',
-			'classes' => 'juddtheme-callout personal-aside jumbotron',
+			'classes' => 'frameworker-theme-callout personal-aside jumbotron',
 			'wrapper' => true,
 		),
 		array(
 			'title' => '.social-aside',
 			'block' => 'blockquote',
-			'classes' => 'juddtheme-callout social-aside jumbotron',
+			'classes' => 'frameworker-theme-callout social-aside jumbotron',
 			'wrapper' => true,
 		),
 	);
@@ -165,7 +165,7 @@ function additional_formats( $init_array ) {
 add_filter( 'tiny_mce_before_init', 'additional_formats' );
 
 function add_advanced_editor_styles() {
-    add_editor_style( 'css/juddtheme-editor-styles.css' );
+    add_editor_style( 'css/frameworker-theme-editor-styles.css' );
 }
 add_action( 'admin_init', 'add_advanced_editor_styles' );
 
