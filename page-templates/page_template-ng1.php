@@ -11,25 +11,25 @@
      array(
       array(
       	"handle"	=> 'ng1-scramblr-service',
-      	"src"			=> get_template_directory_uri() . '/js/services/scramblr-service.js',
+      	"src"			=> get_template_directory_uri() . '/ng1/js/services/scramblr-service.js',
         "deps"		=> array(),
       	"ver"			=> '0.1',
       	"in_foot"	=> true),
       array(
         "handle"	=> 'ng1-wordpress-service',
-        "src"			=> get_template_directory_uri() . '/js/services/wordpress-service.js',
+        "src"			=> get_template_directory_uri() . '/ng1/js/services/wordpress-service.js',
         "deps"		=> array(),
         "ver"			=> '0.1',
         "in_foot"	=> true),
     	array(
       	"handle"	=> 'ng1-routes',
-      	"src"			=> get_template_directory_uri() . '/js/ng1-routes.js',
+      	"src"			=> get_template_directory_uri() . '/ng1/js/ng1-routes.js',
       	"deps"		=> array(),
       	"ver"			=> '0.1',
       	"in_foot"	=> true),
     	array(
       	"handle"	=> 'ng1-implementation',
-      	"src"			=> get_template_directory_uri() . '/js/ng1-app.js',
+      	"src"			=> get_template_directory_uri() . '/ng1/js/ng1-app.js',
       	"deps"		=> array(),
       	"ver"			=> '0.1',
       	"in_foot"	=> true),

@@ -1,0 +1,23 @@
+<!--Template for list of posts -->
+<div class="row">
+  <div category-sidebar class="col-sm-3 col-sm-push-9"></div>
+  <div class="col-sm-9 col-sm-pull-3">
+    <section *ngFor="let blogPost of blogPosts" class="listed-post">
+      <div class="excerpt-post row {{ blogPost.format }}">
+        <div class="excerpt-post-content col-sm-9">
+          <h3>{{ blogPost.title.rendered }}</h3>
+          <div [innerHTML]="blogPost.excerpt.rendered"></div>
+          <p>
+            <a [routerLink]="['posts', blogPost.id]">single this post out.</a></p>
+        </div>
+        <div class="excerpt-post-date-wrapper col-sm-3">
+          <div class="excerpt-post-date badge rounded">
+            <h4>{{ blogPost.date | date:'EEE' }}</h4>
+            <h5>{{ blogPost.date |  date:'MMM d' }}</h5>
+            <h6>{{ blogPost.date |  date:'y' }}</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

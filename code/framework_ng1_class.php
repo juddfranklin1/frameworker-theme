@@ -31,7 +31,7 @@
           "in_foot"	=> true),
         array(
           "handle"	=> 'angular-http-loader',
-          "src"			=> get_template_directory_uri() . '/angular-loading-bar/build/loading-bar.min.js',
+          "src"			=> get_template_directory_uri() . '/ng1/angular-loading-bar/build/loading-bar.min.js',
           "deps"			=> array(),
           "ver"			=> '0.9.0',
           "in_foot"	=> true),

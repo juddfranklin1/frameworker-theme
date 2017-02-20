@@ -1,0 +1,11 @@
+<!-- Layout for individual post -->
+<!--  The ngIf wrapper is not ideal,
+      but averts an *undefined* error
+      before blogPost is defined. -->
+<div class="row" *ngIf="blogPost">
+  <div category-sidebar class="col-sm-3 col-sm-push-9"></div>
+  <div class="col-sm-9 col-sm-pull-3">
+    <h3>{{blogPost.title.rendered}}</h3>
+    <div [innerHTML]="blogPost.content.rendered"></div>
+  </div>
+</div>

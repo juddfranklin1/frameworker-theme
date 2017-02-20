@@ -28,7 +28,7 @@ wordpressApp.controller('mainController', ['$scope', '$log', '$filter', '$resour
       $scope.blogPosts[i].dateFormatted = postDate.toDateString();
     };
   });
-  $scope.categories = wordpressService.getResource('http://juddfranklin-blog/index.php','categories');
+  $scope.categories = wordpressService.getResource(location.protocol + '//' + location.hostname + '/index.php','categories');
 
 }]);
 wordpressApp.controller('singleBlogPostController', ['$scope', '$log', '$filter', '$resource', '$timeout', '$sce', '$location', '$routeParams', 'wordpressService', function ($scope,$log,$filter,$resource,$timeout,$sce,$location,$routeParams,wordpressService) {
@@ -36,28 +36,27 @@ wordpressApp.controller('singleBlogPostController', ['$scope', '$log', '$filter'
   $scope.blogPostId = $routeParams.blogPostId || null;
 
   if ($scope.blogPostId != null) {
-    $scope.singleBlogPostQuery = $resource('http://juddfranklin-blog/index.php/wp-json/wp/v2/posts/' + $scope.blogPostId);
-
-    $scope.blogPost = $scope.singleBlogPostQuery.get(function(){
+    $scope.blogPost = wordpressService.getResource(location.protocol + '//' + location.hostname + '/index.php','posts',$scope.blogPostId,'',function(result){
+      console.log(result.blogPost);
       $scope.blogPost.content.rendered = wordpressService.escapeIt($scope.blogPost.content.rendered);
-      $log.info($scope.blogPost.content.rendered);
     });
+    //$scope.singleBlogPostQuery = $resource(location.protocol + '//' + location.hostname + '/index.php/wp-json/wp/v2/posts/' + $scope.blogPostId);
   } else {
     $scope.blogPost = {};
     $scope.blogPost.title = {};
     $scope.blogPost.title.rendered = "Don't forget to look for a specific post!";
     $scope.blogPost.content = {};
-    $scope.blogPost.content.rendered = "You didn't pick a post to go to, please <a href='/index.php/angularjs/#/'>try again</a>.";
+    $scope.blogPost.content.rendered = "You didn't pick a post to go to, please <a href='./#/'>try again</a>.";
   }
 
-  $scope.categories = wordpressService.getResource('http://juddfranklin-blog/index.php','categories');
+  $scope.categories = wordpressService.getResource(location.protocol + '//' + location.hostname + '/index.php','categories');
 }]);
 wordpressApp.controller('categoryController', ['$scope', '$log', '$filter', '$resource', '$timeout', '$sce', '$location', '$routeParams', 'wordpressService', function ($scope,$log,$filter,$resource,$timeout,$sce,$location,$routeParams,wordpressService) {
   $scope.catId = $routeParams.catId || null;
 
-  $scope.category = wordpressService.getResource('http://juddfranklin-blog/index.php','categories',$scope.catId);
+  $scope.category = wordpressService.getResource(location.protocol + '//' + location.hostname + '/index.php','categories',$scope.catId);
 
-  $scope.blogPostsQuery = $resource('http://juddfranklin-blog/index.php/wp-json/wp/v2/posts?filter[cat]=' + $scope.catId);
+  $scope.blogPostsQuery = $resource(location.protocol + '//' + location.hostname + '/index.php/wp-json/wp/v2/posts?filter[cat]=' + $scope.catId);
 
   $scope.blogPosts = $scope.blogPostsQuery.query(function(){
     for(var i = 0; i < $scope.blogPosts.length; i++){
@@ -65,7 +64,8 @@ wordpressApp.controller('categoryController', ['$scope', '$log', '$filter', '$re
     };
   });
 
-  $scope.categories = wordpressService.getResource('http://juddfranklin-blog/index.php','categories');
+  $scope.categories = wordpressService.getResource(location.protocol + '//' + location.hostname + '/index.php','categories');
+  $log.info($scope);
 }]);
 
 wordpressApp.directive("postDirective",function(){

@@ -6,8 +6,8 @@
  */
  if(get_current_template() == 'page_template-ng2.php'){// Stuff for Angular 1.x page
    require_once get_template_directory() . '/code/framework_ng2_class.php';
- 	 $frameworkInit = new Ng1_Framework_Builder (
-     'ng_1',
+ 	 $frameworkInit = new Ng2_Framework_Builder (
+     'ng_2',
      array(
     	array(
       	"handle"	=> '',
@@ -26,7 +26,7 @@
     )
   );
 
-  add_action('wp_enqueue_scripts',array($frameworkInit,'ng_1_Enqueuing'));
+  add_action('wp_enqueue_scripts',array($frameworkInit,'ng_2_Enqueuing'));
 
   add_action( 'rest_api_init', function() {
     register_rest_field( 'post', 'karma', array(
@@ -51,7 +51,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/page/content', 'ng1' );
+				get_template_part( 'template-parts/page/content', 'ng2' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :

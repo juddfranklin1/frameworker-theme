@@ -7,13 +7,12 @@ wordpressApp.service('wordpressService', ['$resource','$location','$sce',functio
     return trustedHtml;
   }
 
-  that.getResource = function(sourceDirectory,type,uniqueId){
+  that.getResource = function(sourceDirectory,type,uniqueId,filter,callback){
     //handles single or all categories query
     var type = type || 'posts'
     var uniqueId = '/' || '/' + uniqueId;
     var query = $resource(sourceDirectory + '/wp-json/wp/v2/' + type + uniqueId);
     var results = query.query();
-    console.log(results);
     return results;
   }
 }]);

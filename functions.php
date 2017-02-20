@@ -196,3 +196,30 @@ function bootstrapping_navigation(){
 	array_push($classes, "nav-item");
 	return $classes;
 }
+
+/* function slug_get_post_meta_cb( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name );
+}
+
+function slug_update_post_meta_cb( $value, $object, $field_name ) {
+    return update_post_meta( $object[ 'id' ], $field_name, $value );
+}
+
+function my_rest_prepare_post( $data, $post, $request ) {
+	$_data = $data->data;
+	$post_meta = get_post_meta( $post->ID, 'Post Detail', true );
+	$_data['post_meta'] = $post_meta;
+	$data->data = $_data;
+	return $data;
+}
+
+add_action( 'rest_api_init', function() {
+ register_api_field( 'post',
+    'Post Detail',
+    array(
+       'get_callback'    => 'slug_get_post_meta_cb',
+       'update_callback' => 'slug_update_post_meta_cb',
+       'schema'          => null,
+    )
+ );
+});*/
