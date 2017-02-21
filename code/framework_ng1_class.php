@@ -30,12 +30,6 @@
           "ver"			=> '1.5.7',
           "in_foot"	=> true),
         array(
-          "handle"	=> 'angular-http-loader',
-          "src"			=> get_template_directory_uri() . '/ng1/angular-loading-bar/build/loading-bar.min.js',
-          "deps"			=> array(),
-          "ver"			=> '0.9.0',
-          "in_foot"	=> true),
-        array(
           "handle"	=> 'angular-1.3',
           "src"			=> 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js',
           "deps"			=> array(),

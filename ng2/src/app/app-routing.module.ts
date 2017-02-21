@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'posts/:id',
     component: BlogPostSingleComponent
+  },
+  {
+    path: 'categories/:categoryId',
+    component: BlogPostListComponent
   }
 ];
 

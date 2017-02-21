@@ -15,10 +15,15 @@ export class BlogPostsService {
 
   constructor(private http: Http) { }
 
-  getBlogPosts(): Observable<BlogPost[]> {
-
+  getBlogPosts(queryType: string,uniqueId: string,filterText: string): Observable<BlogPost[]> {
+      let filterString = filterText || '';
+      let queryString = queryType || 'posts';
+      if (queryType === 'categories') {
+        filterString = '?filter[cat]=' + uniqueId + filterString;
+      }
+      let idString = '/' + uniqueId || '';
       return this.http
-        .get(this.blogPostsUrl + 'posts')
+        .get(this.blogPostsUrl + queryString + idString + filterString)
         .map((res: Response) => res.json());
 
   }

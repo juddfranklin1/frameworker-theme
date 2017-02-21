@@ -2,7 +2,6 @@
 <div class="row">
   <category-sidebar-directive categories-object="categories"></category-sidebar-directive>
   <div class="col-sm-9 col-sm-pull-3">
-    <div ng-http-loader title="example" methods="GET" template="../ng1-directives/loader.html"></div>
     <section ng-repeat="post in blogPosts" class="listed-post">
       <post-directive post-object="post"></post-directive>
     </section>

@@ -9,10 +9,37 @@ wordpressApp.service('wordpressService', ['$resource','$location','$sce',functio
 
   that.getResource = function(sourceDirectory,type,uniqueId,filter,callback){
     //handles single or all categories query
-    var type = type || 'posts'
-    var uniqueId = '/' || '/' + uniqueId;
-    var query = $resource(sourceDirectory + '/wp-json/wp/v2/' + type + uniqueId);
-    var results = query.query();
+    var type = type || 'posts',
+    uniqueId = '/' + uniqueId || '/',
+    queryString = sourceDirectory + '/wp-json/wp/v2/' + type + uniqueId;
+    console.log(queryString);
+    var query = $resource(queryString);
+    if(type === 'posts'){
+      var results = query.get();
+    } else {
+      var results = query.query();      
+    }
     return results;
   }
+
+  that.loaderShow = function(selector, animationType, speed){
+    var animationType = animationType || 'fade',
+    speed = speed || 'fast';
+
+    if (animationType === 'fade'){
+      angular.element(selector).fadeIn(speed);
+    }
+  };
+
+  that.loaderHide = function(selector, waitTime, animationType, speed){
+    var waitTime = waitTime || 2000,
+    animationType = animationType || 'fade',
+    speed = speed || 'slow';
+
+    setTimeout(function(){
+      if (animationType === 'fade'){
+        angular.element(selector).fadeOut(speed);
+      }
+    }, waitTime);
+  };
 }]);

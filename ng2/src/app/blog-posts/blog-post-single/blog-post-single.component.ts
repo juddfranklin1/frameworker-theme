@@ -23,8 +23,6 @@ export class BlogPostSingleComponent implements OnInit {
       .getBlogPost(postId)
       .subscribe(res => {
         this.blogPost = res;
-        console.log(postId);
-        console.log(this.blogPost);
       });
   }
 
