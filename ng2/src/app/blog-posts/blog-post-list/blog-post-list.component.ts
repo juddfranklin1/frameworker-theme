@@ -2,21 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { BlogPost } from '../blog-post';
+
+import { PageLoaderComponent } from '../../page-loader/page-loader.component';
+
+import { WordpressService } from '../../wordpress.service';
 import { BlogPostsService } from '../blog-posts.service';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './blog-post-list.component.html',
   styleUrls: ['./blog-post-list.component.css'],
-  providers: [BlogPostsService]
+  providers: [BlogPostsService, WordpressService]
 })
 
 export class BlogPostListComponent implements OnInit {
+  appLoaded: string = 'unloaded';
   categoryId: number;
   private sub: any;
   blogPosts: BlogPost[];
+  loaderHide: boolean = false;
 
-  constructor( private BlogPostsService: BlogPostsService, private route: ActivatedRoute ) {  }
+  constructor( private BlogPostsService: BlogPostsService, private WordpressService: WordpressService, private route: ActivatedRoute ) { }
 
   getBlogPosts(queryType,categoryId,filterText){
     let queryString = queryType || '';
@@ -26,6 +32,8 @@ export class BlogPostListComponent implements OnInit {
       .getBlogPosts(queryType,uniqueId,filterString)
       .subscribe(res => {
         this.blogPosts = res;
+        this.appLoaded = 'loaded';
+        setTimeout(() => this.loaderHide = true, 3000);
       });
   }
 

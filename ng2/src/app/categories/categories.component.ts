@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Categories} from './categories';
+import { Categories } from './categories';
 import { CategoriesService } from './categories.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CategoriesService } from './categories.service';
 })
 
 
-export class CategoriesComponent implements OnInit {
+export class BlogCategoriesComponent implements OnInit {
 
   categories: Categories[];
 

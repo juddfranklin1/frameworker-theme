@@ -1,4 +1,4 @@
-wordpressApp.service('wordpressService', ['$resource','$location','$sce',function($resource, $location, $sce){
+wordpressApp.service('wordpressService', ['$resource','$location','$sce','$timeout','spinnerService',function($resource, $location, $sce, $timeout, spinnerService){
   var that = this;
 
   //Do some of the wordpress API formatting stuff that might be repeating in the different controllers.
@@ -12,19 +12,24 @@ wordpressApp.service('wordpressService', ['$resource','$location','$sce',functio
     var type = type || 'posts',
     uniqueId = '/' + uniqueId || '/',
     queryString = sourceDirectory + '/wp-json/wp/v2/' + type + uniqueId;
-    console.log(queryString);
     var query = $resource(queryString);
     if(type === 'posts'){
-      var results = query.get();
+      var results = query.get({},function(){
+        $scope.hiding = true;
+        $log.info($scope.hiding);
+        $timeout(function(){spinnerService.hide('impatientWaiting');},2000);
+      });
     } else {
-      var results = query.query();      
+      var results = query.query({},function(){
+        $timeout(function(){spinnerService.hide('impatientWaiting');},2000);
+      });
     }
     return results;
   }
 
   that.loaderShow = function(selector, animationType, speed){
     var animationType = animationType || 'fade',
-    speed = speed || 'fast';
+    speed = speed || 500;
 
     if (animationType === 'fade'){
       angular.element(selector).fadeIn(speed);

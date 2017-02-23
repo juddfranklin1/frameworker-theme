@@ -1,16 +1,13 @@
 // MODULE
-var wordpressApp = angular.module('wordpressApp', ['ngMessages','ngResource','ngSanitize','ngRoute']);
+var wordpressApp = angular.module('wordpressApp', ['ngMessages','ngResource','ngSanitize','ngRoute','angularSpinners']);
 
 // CONTROLLERS
-wordpressApp.controller('mainController', ['$scope', '$log', '$filter', '$resource', '$timeout', '$sce', '$location', 'scramblrService', 'wordpressService', function ($scope,$log,$filter,$resource,$timeout,$sce,$location,scramblrService,wordpressService) {
-  $scope.$on('$routeChangeSuccess', wordpressService.loaderHide('.impatient-waiting', 2000, 'fade', 'slow'));
-  $scope.$on('$routeChangeStart', wordpressService.loaderShow('.impatient-waiting', 'fade', 'fast'));
+wordpressApp.controller('mainController', ['$scope', '$log', '$filter', '$resource', '$timeout', '$sce', '$location', 'scramblrService', 'wordpressService', 'spinnerService', function ($scope,$log,$filter,$resource,$timeout,$sce,$location,scramblrService,wordpressService,spinnerService) {
+  $scope.spinnerLoaded = function (mySpinner) {
+    mySpinner.show();
+    $scope.hiding = false;
+  };
 
-  // $scope.$on('$routeChangeSuccess', function () {
-  //   setTimeout(function(){
-  //     angular.element('.impatient-waiting').fadeOut('slow');
-  //   }, 2000);
-  // });
   scramblrService.log = $log; //Pass log over to the service.
   //Mmmmmm Scrambled Strings
   $scope.scrambleOptions = ['complex (coming soon)','unicode bubble sorted', 'unicode merge sorted', 'basic'];

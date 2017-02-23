@@ -6,31 +6,37 @@
     public function ng_1_Enqueuing(){
       $scripts = self::set_more_scripts(array(
         array(
-          "handle"	=> 'angular-1.3-messages',
+          "handle"	=> 'angular-messages',
           "src"			=> 'https://code.angularjs.org/1.5.7/angular-messages.min.js',
           "deps"			=> array(),
           "ver"			=> '1.5.7',
           "in_foot"	=> true),
         array(
-          "handle"	=> 'angular-1.3-resource',
+          "handle"	=> 'angular-resource',
           "src"			=> 'https://code.angularjs.org/1.5.7/angular-resource.min.js',
           "deps"			=> array(),
           "ver"			=> '1.5.7',
           "in_foot"	=> true),
         array(
-          "handle"	=> 'angular-1.3-sanitize',
+          "handle"	=> 'angular-sanitize',
           "src"			=> 'https://code.angularjs.org/1.5.7/angular-sanitize.min.js',
           "deps"			=> array(),
           "ver"			=> '1.5.7',
           "in_foot"	=> true),
         array(
-          "handle"	=> 'angular-1.3-routes',
+          "handle"	=> 'angular-routes',
           "src"			=> 'https://code.angularjs.org/1.5.7/angular-route.min.js',
           "deps"			=> array(),
           "ver"			=> '1.5.7',
           "in_foot"	=> true),
         array(
-          "handle"	=> 'angular-1.3',
+          "handle"	=> 'angular-spinners',
+          "src"			=> get_template_directory_uri() . '/ng1/js/angular-spinners.min.js',
+          "deps"			=> array(),
+          "ver"			=> '3.1.2',
+          "in_foot"	=> true),
+        array(
+          "handle"	=> 'angular',
           "src"			=> 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js',
           "deps"			=> array(),
           "ver"			=> '1.5.7',

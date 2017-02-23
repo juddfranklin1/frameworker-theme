@@ -24,4 +24,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class Wpng2RoutingModule { }
+export class BlogRoutingModule { }
