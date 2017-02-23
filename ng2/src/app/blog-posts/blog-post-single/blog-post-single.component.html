@@ -2,6 +2,9 @@
 <!--  The ngIf wrapper is not ideal,
       but averts an *undefined* error
       before blogPost is defined. -->
+<div *ngIf="!blogPost" class="impatient-waiting {{appLoaded}}">
+  <img src="https://media.tenor.co/images/21c0e8dc0259f94a7aae44817bd24b1d/raw" alt="Please Wait..." />
+</div>
 <div class="row" *ngIf="blogPost">
   <div category-sidebar class="col-sm-3 col-sm-push-9"></div>
   <div class="col-sm-9 col-sm-pull-3">

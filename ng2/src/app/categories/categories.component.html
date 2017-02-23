@@ -1,6 +1,6 @@
 <ul class="nav navbar-nav navbar-right">
   <li><a href="#/">All</a></li>
   <li *ngFor="let category of categories" class="listed-category">
-    <a href="categories/{{ category.id }}">{{ category.name }}</a>
+    <a [routerLink]="['categories', category.id]">{{ category.name }}</a>
   </li>
 </ul>

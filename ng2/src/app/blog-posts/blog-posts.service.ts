@@ -17,13 +17,16 @@ export class BlogPostsService {
 
   getBlogPosts(queryType: string,uniqueId: string,filterText: string): Observable<BlogPost[]> {
       let filterString = filterText || '';
-      let queryString = queryType || 'posts';
+      let queryString = 'posts';
+      let queryUrl : string = this.blogPostsUrl + queryString ;
       if (queryType === 'categories') {
-        filterString = '?filter[cat]=' + uniqueId + filterString;
+        queryUrl = queryUrl + '?filter[cat]=' + uniqueId + filterString;
+      } else {
+        let idString = '/' + uniqueId || '';
+        queryUrl = queryUrl + idString + filterString;
       }
-      let idString = '/' + uniqueId || '';
       return this.http
-        .get(this.blogPostsUrl + queryString + idString + filterString)
+        .get(queryUrl)
         .map((res: Response) => res.json());
 
   }

@@ -13,6 +13,7 @@ import { BlogPostsService } from '../blog-posts.service'
 
 export class BlogPostSingleComponent implements OnInit {
   id: number;
+  appLoaded: string = 'unloaded';
   private sub: any;
   blogPost: BlogPost;
 
@@ -23,6 +24,7 @@ export class BlogPostSingleComponent implements OnInit {
       .getBlogPost(postId)
       .subscribe(res => {
         this.blogPost = res;
+        this.appLoaded = 'loaded';
       });
   }
 
