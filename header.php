@@ -10,16 +10,16 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg" <?php if(is_page(6)){ echo 'ng-app="wordpressApp"'; }?>>
 <head>
-<?php if (is_page('ng2')) { ?><base href="/index.php/ng2/" /><?php } ?>
+<?php if (is_page_template('page-templates/page_template-ng2.php')) { ?><base href="/index.php/ng2/" /><?php } ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="row">

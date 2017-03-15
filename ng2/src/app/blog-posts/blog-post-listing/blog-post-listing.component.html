@@ -1,0 +1,11 @@
+<section>
+  <div class="excerpt-post row {{ blogPost.format }}">
+    <div class="excerpt-post-content col-sm-9">
+      <h3>{{ blogPost.title.rendered }}</h3>
+      <div [innerHTML]="blogPost.excerpt.rendered"></div>
+      <p>
+        <a [routerLink]="['posts', blogPost.id]" md-button >read more.</a> <favorite></favorite></p>
+    </div>
+    <div class="excerpt-post-date-wrapper col-sm-3" date-block [blogPost]="blogPost"></div>
+  </div>
+</section>

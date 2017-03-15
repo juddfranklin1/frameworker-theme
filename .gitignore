@@ -1,6 +1,7 @@
 [Tt]humbs.db
 *.DS_Store
 
+src/assets/bower_components
 angular-loading-bar/
 sass/.sass-cache/
 .sass-cache/

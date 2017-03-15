@@ -18,8 +18,8 @@
     ),
     array(
     	array(
-    		"handle"=>'',
-    		"src"=>'',
+    		"handle"=>'font-awesome',
+    		"src"=>'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
     		"deps"=>'',
     		"media"=>''
     	),
@@ -27,6 +27,11 @@
   );
 
   add_action('wp_enqueue_scripts',array($frameworkInit,'ng_2_Enqueuing'));
+
+  function angular_rewrite_path_set() {
+    add_rewrite_rule( '^index.php\/ng2\/(.*)\/?', "index.php?page_id="+get_the_ID(), 'top' );
+  }
+  add_action('init', 'angular_rewrite_path_set');
 
   add_action( 'rest_api_init', function() {
     register_rest_field( 'post', 'karma', array(

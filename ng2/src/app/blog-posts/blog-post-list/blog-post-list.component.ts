@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { BlogPost } from '../blog-post';
+import { BlogPostListingComponent } from '../blog-post-listing/blog-post-listing.component';
 
 import { PageLoaderComponent } from '../../page-loader/page-loader.component';
 
@@ -21,8 +22,12 @@ export class BlogPostListComponent implements OnInit {
   private sub: any;
   blogPosts: BlogPost[];
   loaderHide: boolean = false;
+  errorFound: string;
 
-  constructor( private BlogPostsService: BlogPostsService, private WordpressService: WordpressService, private route: ActivatedRoute ) { }
+  constructor(
+    private BlogPostsService: BlogPostsService,
+    private WordpressService: WordpressService,
+    private route: ActivatedRoute ) { }
 
   getBlogPosts(queryType,categoryId,filterText){
     let queryString = queryType || '';
@@ -30,11 +35,21 @@ export class BlogPostListComponent implements OnInit {
     let filterString = filterText || '';
     this.BlogPostsService
       .getBlogPosts(queryType,uniqueId,filterString)
-      .subscribe(res => {
-        this.blogPosts = res;
-        this.appLoaded = 'loaded';
-        setTimeout(() => this.loaderHide = true, 3000);
-      });
+      .subscribe(
+        (data) => {
+          this.blogPosts = data;
+          this.appLoaded = 'loaded';
+          setTimeout(() => this.loaderHide = true, 2000);
+        },
+        (err) => {
+          let emptyList : BlogPost[] = [];
+          this.blogPosts = emptyList;
+          this.errorFound = "We're sorry, but there was an error recieving your request.";
+          console.log(err);
+          this.appLoaded = 'loaded';
+          setTimeout(() => this.loaderHide = true, 2000);
+        }
+      );
   }
 
   ngOnInit() {

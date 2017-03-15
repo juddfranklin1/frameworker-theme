@@ -31,7 +31,7 @@ export class BlogPostsService {
 
   }
   getBlogPost(id: number): Observable<BlogPost> {
-
+      console.log(this.blogPostsUrl +'posts/' + id);
       return this.http
         .get(this.blogPostsUrl + 'posts/' + id)
         .map((res: Response) => res.json());

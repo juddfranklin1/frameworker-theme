@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PostSingleComponent } from './post-single.component';
+import { BlogPostSingleComponent } from './blog-post-single.component';
 
 describe('PostSingleComponent', () => {
-  let component: PostSingleComponent;
-  let fixture: ComponentFixture<PostSingleComponent>;
+  let component: BlogPostSingleComponent;
+  let fixture: ComponentFixture<BlogPostSingleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostSingleComponent ]
+      declarations: [ BlogPostSingleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostSingleComponent);
+    fixture = TestBed.createComponent(BlogPostSingleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

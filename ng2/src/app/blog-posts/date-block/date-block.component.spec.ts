@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { BlogCategoriesComponent } from './categories.component';
+import { DateBlockComponent } from './date-block.component';
 
-describe('CategoriesComponent', () => {
-  let component: BlogCategoriesComponent;
-  let fixture: ComponentFixture<BlogCategoriesComponent>;
+describe('DateBlockComponent', () => {
+  let component: DateBlockComponent;
+  let fixture: ComponentFixture<DateBlockComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogCategoriesComponent ]
+      declarations: [ DateBlockComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogCategoriesComponent);
+    fixture = TestBed.createComponent(DateBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

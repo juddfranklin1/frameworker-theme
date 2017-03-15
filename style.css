@@ -25,6 +25,24 @@ p, ul, li, ol {
 header, footer {
   font-family: "Istok Web", sans-serif; }
 
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%; }
+  @media screen and (min-device-width: 1025px) {
+    body .site-content-wrapper {
+      min-height: 100vh;
+      padding-top: 140px; }
+      body .site-content-wrapper .site-content {
+        padding-bottom: 50px; }
+    body header#masthead {
+      position: absolute;
+      width: 100%; }
+    body footer.site-footer {
+      margin-top: -50px;
+      height: 50px; } }
+
 a {
   color: #7ebdc2; }
 
@@ -48,7 +66,7 @@ header#masthead {
   padding-bottom: 0; }
 
 main {
-  padding: 2rem 0; }
+  padding: 2rem 0 0; }
   main article, main section {
     position: relative; }
   main section {

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -9,6 +9,9 @@ import { BlogPostSingleComponent } from './blog-posts/blog-post-single/blog-post
 import { BlogRoutingModule } from './app-routing.module';
 import { BlogCategoriesComponent } from './categories/categories.component';
 import { PageLoaderComponent } from './page-loader/page-loader.component';
+import { DateBlockComponent } from './blog-posts/date-block/date-block.component';
+import { BlogPostListingComponent } from './blog-posts/blog-post-listing/blog-post-listing.component';
+import { FavoriteComponent } from './shared/favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { PageLoaderComponent } from './page-loader/page-loader.component';
     BlogPostListComponent,
     BlogPostSingleComponent,
     BlogCategoriesComponent,
-    PageLoaderComponent
+    PageLoaderComponent,
+    DateBlockComponent,
+    BlogPostListingComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

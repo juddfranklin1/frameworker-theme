@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BlogPostListingComponent } from './blog-posts/blog-post-listing/blog-post-listing.component';
 import { BlogPostListComponent } from './blog-posts/blog-post-list/blog-post-list.component';
 import { BlogPostSingleComponent } from './blog-posts/blog-post-single/blog-post-single.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'categories/:categoryId',
-    component: BlogPostListComponent
+    component: BlogPostListComponent,
+    pathMatch: 'full'
   }
 ];
 

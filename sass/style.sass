@@ -11,6 +11,24 @@
 @import 'cooler-scheme.sass'
 @import 'fonts.sass'
 
+html
+  height: 100%
+
+body
+  min-height: 100%
+  @media screen and (min-device-width: 1025px)
+    .site-content-wrapper
+      min-height: 100vh
+      padding-top: 140px
+      .site-content
+        padding-bottom: 50px
+    header#masthead
+      position: absolute
+      width: 100%
+    footer.site-footer
+      margin-top: -50px
+      height: 50px
+
 a
   color: $color2
 
@@ -32,7 +50,7 @@ header#masthead,footer
 header#masthead
   padding-bottom: 0
 main
-  padding: 2rem 0
+  padding: 2rem 0 0
   article, section
     position: relative
   section
@@ -52,6 +70,7 @@ main
   article.home-article
     padding: 0 0 2rem
     margin: 0 0 2rem
+//Sticky Footer
 
 // Custom formats
 .frameworker-theme-callout
